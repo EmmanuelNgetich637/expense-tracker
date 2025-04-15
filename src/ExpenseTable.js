@@ -1,4 +1,5 @@
 export default function ExpenseTable({ expenses }) {
+  console.log("Expenses in table:", expenses); // Add this line
     return (
       <table>
         <thead>

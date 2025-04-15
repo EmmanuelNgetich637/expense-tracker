@@ -8,7 +8,7 @@ function ExpenseForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted!"); // Add this
+    console.log("Submitted!");
     console.log("All values:", { description, category, amount, date });
 
     if (!description || !category || !amount || !date) return;
@@ -21,7 +21,7 @@ function ExpenseForm({ onAdd }) {
       date,
     };
 
-    onAdd(newExpense); // This calls the App component's addExpense
+    onAdd(newExpense);
     console.log("New expense added:", newExpense);
 
     // Clear form
@@ -32,35 +32,35 @@ function ExpenseForm({ onAdd }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2">
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
       <input
         type="text"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="border p-1"
+        className="p-2 bg-gray-800 rounded"
       />
       <input
         type="text"
         placeholder="Category"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        className="border p-1"
+        className="p-2 bg-gray-800 rounded"
       />
       <input
         type="number"
         placeholder="Amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
-        className="border p-1"
+        className="p-2 bg-gray-800 rounded"
       />
       <input
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        className="border p-1"
+        className="p-2 bg-gray-800 rounded"
       />
-      <button type="submit" className="bg-blue-500 text-white px-2 py-1">
+      <button type="submit" className="bg-black text-white p-2 rounded hover:bg-gray-700">
         Add Expense
       </button>
     </form>

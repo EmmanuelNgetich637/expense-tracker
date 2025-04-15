@@ -12,18 +12,27 @@ function App() {
   );
 
   function addExpense(newExpense) {
-    console.log("Received in App:", newExpense); // This should log every time a new expense is added
+    console.log("Received in App:", newExpense); // Should log each time
     setExpenses([...expenses, newExpense]);
   }
 
   return (
-    <div>
-      <h1>Expense Tracker</h1>
-      <SearchBar search={search} setSearch={setSearch} />
-      <ExpenseForm onAdd={addExpense} />
+    <div className="p-4 text-white bg-gray-900 min-h-screen">
+      <h1 className="text-4xl font-bold mb-6">Expense Tracker</h1>
+
+      <div className="mb-6">
+        <SearchBar search={search} setSearch={setSearch} />
+      </div>
+
+      <div className="mb-8 border-2 border-gray-600 rounded-lg p-4">
+        <h2 className="text-2xl font-semibold mb-4">Add New Expense</h2>
+        <ExpenseForm onAdd={addExpense} />
+      </div>
+
       <ExpenseTable expenses={filteredExpenses} />
     </div>
   );
 }
 
 export default App;
+
